@@ -1,14 +1,16 @@
 /*
  * File:comparealg.h
  * Data: 28 - Dec - 2013
- * Author: Fuwenlong@126.com
+ * Author: fuwenlong@126.com
  * 
  * Details:
  * Interface for comparing two datasets. 
  *
+ * CopyRights (2014):  
+ * fuwenlong@126.com
  * 
  * Functions:
- * CompareTo  
+ * Compare  
  */ 
 
 #ifndef COMPARE_ALG_H
@@ -47,10 +49,10 @@ public:
    * @return True   one is logically equal to two.
    *         False  one is not logically equalt to two. 
    */
-  virtual bool CompareTo( 
+  virtual bool Compare( 
      const Data_Common::DataHandler* one,
      const Data_Common::DataHandler* two
-			) const = 0;    
+			) const =0;    
 };
     
 }
