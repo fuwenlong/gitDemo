@@ -19,7 +19,7 @@
 #include "anagrambuilder.h" // Anagram::AnagramBuilder
 #include "angsettings.h"   //  Anagram::AngSettings
 #include "datahandler.h"   //  Data_Common::DataHandler
-#include "cmwarning.h"     //  Common_Util::CMWarning
+#include "cmmessage.h"     //  Common_Util::CMMessage
 #include "comparealg.h"    // CompareAlg
 
 
@@ -38,9 +38,9 @@ Anagram::AngSettings aSet;
  
 // 3. build a algorithm model 
  try{
-   Common_Util::CMWarning pWarning; 
+   Common_Util::CMMessage msg; 
    Anagram::AnagramBuilder* pBuilder = 
-   new Anagram::AnagramBuilder( &pWarning, &aSet );
+   new Anagram::AnagramBuilder( &msg, &aSet );
  
    CompareAlg* palg( 0 );
  
@@ -69,8 +69,15 @@ Anagram::AngSettings aSet;
    }
 
 // 5. give results.  here std::cout true or false. 
-   std::cout<<" Answer: "<< ( bAna ? " Yes" : " No" )<<std::endl;
-
+   if( msg.IsGood( ) )
+   {
+     std::cout<<" Answer: "<< ( bAna ? " Yes" : " No" )<<std::endl;
+   }
+   else
+   {
+      std::cout<<" Errors: "<< msg.GetError( ) <<std::endl;
+   }
+   
    // 6. release
    if( pBuilder )
    {

@@ -33,6 +33,11 @@
 
 #include "comparealg.h"
 
+namespace Common_Util
+{
+  class CMMessage;
+}
+
 namespace Data_Common
 {
   class DataHandler;
@@ -49,8 +54,12 @@ class BucketCmp: public Compare_Alg
 {
   
 public:
-  
-  BucketCmp();
+  /*
+   * Construct
+   * 
+   * @param pMsg (out) Record all warning and error messages when building a model and calling the model. 
+   */
+  BucketCmp(  Common_Util::CMMessage* const pMsg );
   BucketCmp( const BucketCmp& one );
   
   virtual ~BucketCmp();
@@ -68,6 +77,9 @@ public:
      const Data_Common::DataHandler* one,
      const Data_Common::DataHandler* two
 			);    
+    
+private:
+    BucketCmp();
     
 };
     

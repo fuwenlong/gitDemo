@@ -68,12 +68,17 @@ public:
    * Load file from fName, mStrFName (assinged by constructor)
    * or mFData (assinged by constructor).
    * 
-   * @param fName The loaded file name.
+   * @param pWarning  (out) Record all warning messages when building a model 
+   *                  and calling the model. 
+   * @param fName     The loaded file name. When the default value is used, 
+   *                  the data source is given during construction. 
    * 
    * @return True   Load successfully.
    *         False  Problems in reading the given file. 
    */
-  virtual bool Load( const char* fName = 0 );
+  virtual bool Load( 
+    Common_Util::CMWarning* const pWarning, 
+    const char* fName = 0 );
   
   /*
    *  Read an int value. 

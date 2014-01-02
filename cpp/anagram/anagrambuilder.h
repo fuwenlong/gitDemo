@@ -14,7 +14,7 @@
 
 namespace Common_Util
 {
-  class CMWarning;
+  class CMMessage;
 }
 
 namespace Compare_Alg
@@ -39,12 +39,12 @@ public:
   /*
    * Construct 
    * 
-   * @param pWarning  (out) Record all warning messages when building a model and calling the model. 
+   * @param pMsg (out) Record all warning and error messages when building a model and calling the model. 
    * @param pSetting  Settings for building a model. 
    * 
    */
   AnagramBuilder( 
-    Common_Util::CMWarning* const pWarning, 
+    Common_Util::CMMessage* const pMsg, 
     const Anagram::AngSettings* pSetting );
   
   virtual ~AnagramBuilder();

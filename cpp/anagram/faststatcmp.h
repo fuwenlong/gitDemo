@@ -31,6 +31,11 @@
 
 #include "comparealg.h"
 
+namespace Common_Util
+{
+  class CMMessage;
+}
+
 namespace Data_Common
 {
   class DataHandler;
@@ -47,8 +52,12 @@ class FastStatCmp: public Compare_Alg
 {
   
 public:
-  
-  FastStatCmp();
+  /*
+   * Construct
+   * 
+   * @param pMsg (out) Record all warning and error messages when building a model and calling the model. 
+   */
+  FastStatCmp( Common_Util::CMMessage* const pMsg );
   FastStatCmp( const FastStatCmp& one );
   
   virtual ~FastStatCmp();
@@ -66,6 +75,12 @@ public:
      const Data_Common::DataHandler* one,
      const Data_Common::DataHandler* two
 			);    
+private:
+  /*
+   * Construct
+   */
+  FastStatCmp();
+  
     
 };
     

@@ -26,6 +26,11 @@
 
 #include "comparealg.h"
 
+namespace Common_Util
+{
+  class CMMessage;
+}
+
 namespace Data_Common
 {
   class DataHandler;
@@ -42,8 +47,12 @@ class FastSortCmp: public Compare_Alg
 {
   
 public:
-  
-  FastSortCmp();
+    /*
+   * Construct
+   * 
+   * @param pMsg (out) Record all warning and error messages when building a model and calling the model. 
+   */
+  FastSortCmp( Common_Util::CMMessage* const pMsg  );
   FastSortCmp( const FastSortCmp& one );
   
   virtual ~FastSortCmp();
@@ -60,7 +69,9 @@ public:
   virtual bool Compare( 
      const Data_Common::DataHandler* one,
      const Data_Common::DataHandler* two
-			) const;    
+			) const;  
+private:
+  FastSortCmp( );
     
 };
     

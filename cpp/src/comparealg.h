@@ -16,6 +16,11 @@
 #ifndef COMPARE_ALG_H
 #define COMPARE_ALG_H
 
+namespace Common_Util
+{
+  class CMMessage;
+}
+
 namespace Data_Common
 {
   class DataHandler;
@@ -52,7 +57,12 @@ public:
   virtual bool Compare( 
      const Data_Common::DataHandler* one,
      const Data_Common::DataHandler* two
-			) const =0;    
+			) const =0; 
+			
+			
+protected:
+  // Record all warning and error messages.
+  Common_Util::CMMessage* mpMsg, 
 };
     
 }
