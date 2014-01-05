@@ -1,3 +1,6 @@
-There are different computer languages for comparing two strings as an anagram or not (http://en.wikipedia.org/wiki/Anagram).
-The current version will support c++, java, and python. 
-Note that all codes are mainly used to show how to design codes, rather than simply solving a task. 
+There are different computer languages for comparing two strings as anagrams or not (http://en.wikipedia.org/wiki/Anagram).
+The current version will support c++ and java. 
+
+An old and simple discriminant analysis is implemented by python. 
+
+Note that all codes (c++) are mainly used to show how to design programs, rather than simply solving a task. 
