@@ -44,7 +44,7 @@ public:
    * 
    */
   AnagramBuilder( 
-    Common_Util::CMMessage* const pMsg, 
+    Common_Util::CMMessage* pMsg, 
     const Anagram::AngSettings* pSetting );
   
   virtual ~AnagramBuilder();
